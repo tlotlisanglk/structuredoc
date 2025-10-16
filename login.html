@@ -25,7 +25,7 @@
             display: flex; 
             justify-content: space-between; 
             align-items: center;
-            padding: 20px; 
+            padding: 15px 20px; 
             background-color:#0072bc; 
             color: #fff; 
             position: relative;
@@ -54,7 +54,7 @@
         }
 
         .header .nav li {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: bold;
             color: yellow;
             letter-spacing: 1px;
@@ -64,17 +64,17 @@
             background-color:#0072bc; 
             color: #fff; 
             text-align: center; 
-            padding: 20px; 
-            margin-top: auto;
+            padding: 15px; 
         }
 
         .content-area {
-            flex: 1;
+            flex: 0 0 auto; /* prevent stretching */
             display: flex;
             justify-content: center;
             align-items: flex-start;
             flex-direction: column;
-            padding: 40px;
+            padding: 20px 0; /* reduced padding */
+            min-height: calc(100vh - 130px); /* header + footer ~130px */
         }
 
         /* ====== Tutorial Container Styles ====== */
@@ -82,8 +82,8 @@
           background: #ffffff;
           border: 1px solid #dcdcdc;
           border-radius: 10px;
-          padding: 20px;
-          width: 400px;
+          padding: 15px; /* reduced padding */
+          width: 350px; /* slightly smaller width */
           box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
           margin: 0 auto;
         }
@@ -91,20 +91,20 @@
         .tutorial-container h2 {
           background: #5c6bc0;
           color: white;
-          padding: 10px 15px;
+          padding: 8px 12px;
           border-radius: 6px;
           margin-top: 0;
-          font-size: 18px;
+          font-size: 16px;
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 6px;
         }
 
         .tutorial-container p {
-          font-size: 15px;
+          font-size: 14px;
           color: #333;
-          margin: 15px 0;
-          line-height: 1.5;
+          margin: 10px 0;
+          line-height: 1.4;
         }
 
         /* ======= DROPDOWN SECTION ======= */
@@ -117,13 +117,13 @@
           background: #fff;
           color: #333;
           cursor: pointer;
-          padding: 12px;
+          padding: 10px;
           text-align: left;
           border: 1px solid #ccc;
           outline: none;
-          font-size: 15px;
+          font-size: 14px;
           border-radius: 6px;
-          margin-bottom: 6px;
+          margin-bottom: 5px;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -135,13 +135,13 @@
         }
 
         .dropdown-btn i:first-child {
-          margin-right: 10px;
+          margin-right: 8px;
         }
 
         .dropdown-content {
           display: none;
-          padding-left: 20px;
-          margin-bottom: 8px;
+          padding-left: 15px;
+          margin-bottom: 5px;
           border-left: 2px solid #dcdcdc;
           animation: dropdownOpen 0.3s ease;
         }
@@ -159,10 +159,10 @@
 
         .dropdown-content a {
           display: block;
-          padding: 8px;
+          padding: 6px;
           text-decoration: none;
           color: #007bff;
-          font-size: 14px;
+          font-size: 13px;
         }
 
         .dropdown-content a:hover {
@@ -187,11 +187,10 @@
 
     <header class="header">
         <div class="logo">
-            <img src="Fablab.png" alt="FabLab" style="width: 150px; height: 80px; border-radius: 50%;">
+            <img src="Fablab.png" alt="FabLab" style="width: 120px; height: 60px; border-radius: 50%;">
             <span class="logo-text">FabLab Work Progress</span>
         </div>
 
-        <!-- ✅ Centered Portfolio title -->
         <nav class="nav">
             <ul>
                 <li>Portfolio</li>
@@ -200,7 +199,6 @@
     </header>
 
     <div class="content-area">
-        <!-- ✅ REPLACED LOGIN FORM WITH DROPDOWN MENU -->
         <div class="tutorial-container">
             <h2><i class="fa-solid fa-book"></i> Tutorial Documentation Structure</h2>
             <p>
@@ -256,7 +254,6 @@
         <p>&copy; 2025 Sebopi-Unipod. All rights reserved.</p>
     </footer>
 
-    <!-- ======= DROPDOWN TOGGLE SCRIPT ======= -->
     <script>
         document.querySelectorAll(".dropdown-btn").forEach((btn) => {
           btn.addEventListener("click", () => {
