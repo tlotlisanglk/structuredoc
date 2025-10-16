@@ -24,9 +24,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 15px 20px;
             background-color: #0072bc;
             color: #fff;
+            position: relative;
         }
 
         .header .logo {
@@ -38,34 +39,43 @@
             gap: 10px;
         }
 
+        .header .nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
         .header .nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
 
         .header .nav li {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: bold;
             color: yellow;
         }
 
-        /* Center content vertically and horizontally */
+        /* ===== Content Area ===== */
         .content-area {
+            flex: 1;
             display: flex;
             justify-content: center;
-            align-items: center;
-            flex-grow: 1;
-            padding: 0 20px;
+            align-items: flex-start; /* top-aligned */
+            padding: 20px 0; /* reduce padding */
+            overflow-y: auto; /* scroll only if absolutely needed */
         }
 
         .tutorial-container {
             background: #fff;
             border: 1px solid #dcdcdc;
             border-radius: 10px;
-            padding: 15px;
+            padding: 15px; /* reduce padding */
             width: 350px;
+            max-height: 80vh; /* container never exceeds viewport height */
+            overflow-y: auto; /* scroll inside container if content grows */
             box-shadow: 0 3px 10px rgba(0,0,0,0.15);
         }
 
@@ -152,7 +162,7 @@
             padding: 10px;
         }
 
-        /* Make page fully visible without scroll on small screens */
+        /* ===== Responsive tweaks ===== */
         @media (max-height: 700px) {
             .tutorial-container {
                 width: 300px;
@@ -174,7 +184,6 @@
                 padding: 5px;
             }
         }
-
     </style>
 </head>
 <body>
