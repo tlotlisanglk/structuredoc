@@ -1,0 +1,237 @@
+<html>
+<head>
+    <title>Fab-Lab-Learning Structure</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            height: 100%;
+            background: #e9ecef;
+            display: flex;
+            flex-direction: column;
+        }
+
+       
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 20px; 
+            background-color: #0072bc;
+            color: #fff;
+            position: relative;
+            min-height: 100px; 
+        }
+
+        .header .logo {
+            font-weight: 600;
+            font-size: 22px;
+            color: yellow;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header .logo img {
+            width: 150px; 
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .header .nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .header .nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header .nav li {
+            font-size: 28px;
+            font-weight: bold;
+            color: yellow;
+        }
+
+        
+        .content-area {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            padding: 20px 0;
+            overflow-y: auto;
+        }
+.tutorial-container {
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 15px;
+    width: 350px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    margin-top: 40px; 
+}
+
+
+        .tutorial-container h2 {
+            background: #5c6bc0;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-top: 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tutorial-container p {
+            font-size: 14px;
+            color: #333;
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+
+        .dropdown-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dropdown-btn {
+            background: #fff;
+            color: #333;
+            cursor: pointer;
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 14px;
+            border-radius: 6px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.2s;
+        }
+
+        .dropdown-btn:hover {
+            background: #f2f2f2;
+        }
+
+        .dropdown-content {
+            display: none;
+            padding-left: 15px;
+            margin-bottom: 5px;
+            border-left: 2px solid #dcdcdc;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 6px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 13px;
+        }
+
+        .dropdown-content a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown-btn.active + .dropdown-content {
+            display: block;
+        }
+
+        .arrow {
+            transition: transform 0.3s;
+        }
+
+        .dropdown-btn.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        
+        .footer {
+            background-color:#0072bc;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+       
+        @media (max-height: 700px) {
+            .tutorial-container {
+                width: 300px;
+                padding: 10px;
+            }
+
+            .tutorial-container h2 {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+
+            .dropdown-btn {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .dropdown-content a {
+                font-size: 12px;
+                padding: 5px;
+            }
+
+            .header {
+                padding: 20px 15px;
+            }
+
+            .header .logo img {
+                width: 120px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="Fablab.png" alt="FabLab">
+        <span class="logo-text">FabLab Work Progress</span>
+    </div>
+    <nav class="nav">
+        <ul>
+            <li>Portfolio</li>
+        </ul>
+    </nav>
+</header>
+
+<div class="content-area">
+   <p>ddddddd ffffffffffffffffffff  fdddd</p>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 Sebopi-Unipod. All rights reserved.</p>
+</footer>
+
+<script>
+    document.querySelectorAll(".dropdown-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+      });
+    });
+</script>
+
+</body>
+</html>
