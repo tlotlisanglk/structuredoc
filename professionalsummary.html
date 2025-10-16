@@ -65,6 +65,31 @@
             color: #1E90FF;
         }
 
+        /* ===== Home Button ===== */
+        .home-button {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 0 0;
+        }
+
+        .home-button a {
+            text-decoration: none;
+            background-color: #1E90FF;
+            color: white;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .home-button a:hover {
+            background-color: #0d6efd;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
         /* ===== Content Area ===== */
         .content-area {
             flex: 1;
@@ -85,7 +110,7 @@
             max-height: 80vh;
             overflow-y: auto;
             box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-            margin-top: 50px;
+            margin-top: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -135,6 +160,11 @@
             .tutorial-container p {
                 font-size: 14px;
             }
+
+            .home-button a {
+                font-size: 14px;
+                padding: 10px 25px;
+            }
         }
     </style>
 </head>
@@ -152,6 +182,11 @@
     </nav>
 </header>
 
+<!-- ===== Home Button Section ===== -->
+<div class="home-button">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+</div>
+
 <div class="content-area">
    <div class="tutorial-container">
         <h2><i class="fa-solid fa-info-circle"></i> About Me</h2>
@@ -163,7 +198,6 @@
             My knowledge and skills are based not only on Electrical Engineering but also on Software Design. 
             I have experience in designing, implementing, and documenting complex systems with a focus on usability and clarity.
         </p>
-       
     </div>
 </div>
 
