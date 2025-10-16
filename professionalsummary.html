@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Fab-Lab-Learning Structure</title>
@@ -18,16 +19,16 @@
             flex-direction: column;
         }
 
-       
+        /* ===== Header ===== */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 20px; 
+            padding: 25px 20px;
             background-color: #0072bc;
             color: #fff;
             position: relative;
-            min-height: 100px; 
+            min-height: 100px;
         }
 
         .header .logo {
@@ -40,7 +41,7 @@
         }
 
         .header .logo img {
-            width: 150px; 
+            width: 150px;
             height: 80px;
             border-radius: 50%;
         }
@@ -64,105 +65,54 @@
             color: yellow;
         }
 
-        
+        /* ===== Content Area ===== */
         .content-area {
             flex: 1;
             display: flex;
             justify-content: center;
-            align-items: flex-start; 
+            align-items: flex-start;
             padding: 20px 0;
             overflow-y: auto;
         }
-.tutorial-container {
-    background: #fff;
-    border: 1px solid #dcdcdc;
-    border-radius: 10px;
-    padding: 15px;
-    width: 350px;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    margin-top: 40px; 
-}
 
+        .tutorial-container {
+            background: #fff;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            padding: 25px;
+            width: 500px;
+            max-width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: justify;
+        }
 
         .tutorial-container h2 {
             background: #5c6bc0;
             color: white;
-            padding: 8px 12px;
+            padding: 10px 15px;
             border-radius: 6px;
             margin-top: 0;
-            font-size: 16px;
+            font-size: 18px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            width: 100%;
+            justify-content: center;
         }
 
         .tutorial-container p {
-            font-size: 14px;
+            font-size: 16px;
             color: #333;
-            margin: 10px 0;
-            line-height: 1.4;
+            margin: 15px 0;
+            line-height: 1.6;
         }
 
-        .dropdown-section {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .dropdown-btn {
-            background: #fff;
-            color: #333;
-            cursor: pointer;
-            padding: 10px;
-            text-align: left;
-            border: 1px solid #ccc;
-            outline: none;
-            font-size: 14px;
-            border-radius: 6px;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: background 0.2s;
-        }
-
-        .dropdown-btn:hover {
-            background: #f2f2f2;
-        }
-
-        .dropdown-content {
-            display: none;
-            padding-left: 15px;
-            margin-bottom: 5px;
-            border-left: 2px solid #dcdcdc;
-        }
-
-        .dropdown-content a {
-            display: block;
-            padding: 6px;
-            text-decoration: none;
-            color: #007bff;
-            font-size: 13px;
-        }
-
-        .dropdown-content a:hover {
-            text-decoration: underline;
-        }
-
-        .dropdown-btn.active + .dropdown-content {
-            display: block;
-        }
-
-        .arrow {
-            transition: transform 0.3s;
-        }
-
-        .dropdown-btn.active .arrow {
-            transform: rotate(180deg);
-        }
-
-        
         .footer {
             background-color:#0072bc;
             color: #fff;
@@ -170,35 +120,20 @@
             padding: 10px;
         }
 
-       
-        @media (max-height: 700px) {
+        /* ===== Responsive tweaks ===== */
+        @media (max-width: 600px) {
             .tutorial-container {
-                width: 300px;
-                padding: 10px;
+                width: 90%;
+                padding: 15px;
             }
 
             .tutorial-container h2 {
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+
+            .tutorial-container p {
                 font-size: 14px;
-                padding: 6px 10px;
-            }
-
-            .dropdown-btn {
-                font-size: 13px;
-                padding: 8px;
-            }
-
-            .dropdown-content a {
-                font-size: 12px;
-                padding: 5px;
-            }
-
-            .header {
-                padding: 20px 15px;
-            }
-
-            .header .logo img {
-                width: 120px;
-                height: 100px;
             }
         }
     </style>
@@ -218,24 +153,26 @@
 </header>
 
 <div class="content-area">
-   <div>I am an Electrical and Computer Engineer. 
-    I studied Diploma in Computer Systems Engineering at Lerotholi Polytechnic a
-    nd a Bachelor of Science in Engineering in Electrical and Computer Engineering 
-    at the University of Cape Town. My knowledge and skills are based 
-    not only on Electrical Engineering but also on Software Design.</div>
+   <div class="tutorial-container">
+        <h2><i class="fa-solid fa-info-circle"></i> About Me</h2>
+        <p>
+            I am an Electrical and Computer Engineer. I studied a Diploma in Computer Systems Engineering at Lerotholi Polytechnic 
+            and a Bachelor of Science in Engineering in Electrical and Computer Engineering at the University of Cape Town. 
+        </p>
+        <p>
+            My knowledge and skills are based not only on Electrical Engineering but also on Software Design. 
+            I have experience in designing, implementing, and documenting complex systems with a focus on usability and clarity.
+        </p>
+        <p>
+            This container provides a clear area for my personal and professional information, making it easy to read, 
+            well-formatted, and visually separated from the header and footer.
+        </p>
+    </div>
 </div>
 
 <footer class="footer">
     <p>&copy; 2025 Sebopi-Unipod. All rights reserved.</p>
 </footer>
-
-<script>
-    document.querySelectorAll(".dropdown-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        btn.classList.toggle("active");
-      });
-    });
-</script>
 
 </body>
 </html>
