@@ -20,14 +20,16 @@
             flex-direction: column;
         }
 
+        /* ===== Header ===== */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 25px 20px; /* increased padding */
             background-color: #0072bc;
             color: #fff;
             position: relative;
+            min-height: 100px; /* ensure header tall enough for logo */
         }
 
         .header .logo {
@@ -36,7 +38,13 @@
             color: yellow;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+        }
+
+        .header .logo img {
+            width: 150px; /* larger logo */
+            height: 80px;
+            border-radius: 50%;
         }
 
         .header .nav {
@@ -64,18 +72,18 @@
             display: flex;
             justify-content: center;
             align-items: flex-start; /* top-aligned */
-            padding: 20px 0; /* reduce padding */
-            overflow-y: auto; /* scroll only if absolutely needed */
+            padding: 20px 0;
+            overflow-y: auto;
         }
 
         .tutorial-container {
             background: #fff;
             border: 1px solid #dcdcdc;
             border-radius: 10px;
-            padding: 15px; /* reduce padding */
+            padding: 15px;
             width: 350px;
-            max-height: 80vh; /* container never exceeds viewport height */
-            overflow-y: auto; /* scroll inside container if content grows */
+            max-height: 80vh; /* prevent container from exceeding viewport */
+            overflow-y: auto;
             box-shadow: 0 3px 10px rgba(0,0,0,0.15);
         }
 
@@ -155,6 +163,7 @@
             transform: rotate(180deg);
         }
 
+        /* ===== Footer ===== */
         .footer {
             background-color:#0072bc;
             color: #fff;
@@ -183,6 +192,15 @@
                 font-size: 12px;
                 padding: 5px;
             }
+
+            .header {
+                padding: 20px 15px;
+            }
+
+            .header .logo img {
+                width: 120px;
+                height: 65px;
+            }
         }
     </style>
 </head>
@@ -190,7 +208,7 @@
 
 <header class="header">
     <div class="logo">
-        <img src="Fablab.png" alt="FabLab" style="width: 100px; height: 50px; border-radius: 50%;">
+        <img src="Fablab.png" alt="FabLab">
         <span class="logo-text">FabLab Work Progress</span>
     </div>
     <nav class="nav">
