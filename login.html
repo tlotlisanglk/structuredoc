@@ -12,6 +12,7 @@
             display: flex;
             flex-direction: column;
         }
+
         .header { 
             display: flex; 
             justify-content: space-between; 
@@ -19,31 +20,38 @@
             padding: 20px; 
             background-color:#0072bc; 
             color: #fff; 
+            position: relative;
         }
+
         .header .logo { 
             font-weight: 600; 
             font-size: 24px; 
+            color: yellow;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
+
+        .header .nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
         .header .nav ul { 
-            display: flex; 
             list-style-type: none; 
-            gap: 20px; 
-            justify-content: center; 
-            width: 100%;
+            margin: 0; 
+            padding: 0;
         }
-        .header .nav a { 
-            color: #fff; 
-            text-decoration: none; 
-            font-weight: 400; 
-            padding: 10px 50px; 
-            border-radius: 20px; 
-            background-color: #333; 
-            transition: background-color 0.3s, transform 0.3s; 
+
+        .header .nav li {
+            font-size: 32px;
+            font-weight: bold;
+            color: yellow;
+            letter-spacing: 1px;
         }
-        .header .nav a:hover { 
-            background-color: #555; 
-            transform: scale(1.05); 
-        }
+
         .search-bar {
             display: flex;
             align-items: center;
@@ -75,6 +83,7 @@
             color: white;
             font-size: 18px;
         }
+
         .hero { 
             height: 300px; 
             background-color:#f4f4f4; 
@@ -100,6 +109,7 @@
             color: #fff; 
             text-decoration: none; 
         }
+
         .product-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
@@ -115,6 +125,7 @@
             width: 100%; 
             height: auto; 
         }
+
         .login-title {
             text-align: center;
             font-size: 18px;
@@ -122,6 +133,7 @@
             margin-bottom: 10px;
             font-family: 'Montserrat', sans-serif;
         }
+
         .footer { 
             background-color:#0072bc; 
             color: #fff; 
@@ -129,6 +141,7 @@
             padding: 20px; 
             margin-top: auto;
         }
+
         .content-area {
             flex: 1;
             display: flex;
@@ -136,6 +149,7 @@
             align-items: center;
             flex-direction: column;
         }
+
         .form-container {
             background:#f4f4f4;
             padding: 20px;
@@ -143,89 +157,68 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 300px;
         }
+
         table {
             width: 100%;
         }
         td {
             padding: 10px;
         }
-        .header .logo { 
-            font-weight: 520; 
-            font-size: 20px;
-            color:yellow;  
-        }
 
-        .header .nav {
-            width: 65%;
-        }
-
-        /* ✅ New CSS added — only affects Portfolio text size and alignment */
-        .header .nav li {
-            font-size: 28px;
-            font-weight: bold;
-            color: yellow;
-            list-style: none;
-            text-align: center;
-            width: 100%;
-        }
-        /* ✅ End of new CSS */
     </style>
 
 </head>
 <body>
 
     <header class="header">
-        <div class="logo"><img src="Fablab.png" alt="FabLab" style="width: 150px; height: 80; border-radius: 50%;"> <span class="logo-text">FabLab Work Progress</span></div>
-        
-        <!-- ✅ Modified block below -->
+        <div class="logo">
+            <img src="Fablab.png" alt="FabLab" style="width: 150px; height: 80px; border-radius: 50%;">
+            <span class="logo-text">FabLab Work Progress</span>
+        </div>
+
+        <!-- ✅ Centered Portfolio title -->
         <nav class="nav">
             <ul>
                 <li>Portfolio</li>
             </ul>
         </nav>
-        <!-- ✅ End of modified block -->
     </header>
 
-<div class="content-area">
-  
-    <div class="login-title">Log In</div>
+    <div class="content-area">
+        <div class="login-title">Log In</div>
 
-    <div class="form-container">
-        <form method="POST" action="">
-            <table border="0">
-                <tr>
-                    <td><b>Username:</b></td>
-                    <td><input type="text" name="username" required></td>
-                </tr>
-                <tr>
-                    <td><b>Password:</b></td>
-                    <td><input type="password" name="password1" required></td>
-                </tr>
-                <tr>
-                    <td><b>User Type:</b></td>
-                    <td>
-                        <select name="usertype" id="usertype" required>
-                            <option value="">-- Select --</option>
-                            <option value="Admin">Admin</option>
-                            <option value="User">User</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" name="submit" value="Login" style="padding: 10px 20px; border-radius: 25px; border: none; background-color: #007BFF; color: yellow; font-weight: bold; cursor: pointer;">
-                    </td>
-                </tr>
-            
-            </table>
-            <div style="text-align: center; color: red; font-weight: bold; margin-top: 10px;">
-           
+        <div class="form-container">
+            <form method="POST" action="">
+                <table border="0">
+                    <tr>
+                        <td><b>Username:</b></td>
+                        <td><input type="text" name="username" required></td>
+                    </tr>
+                    <tr>
+                        <td><b>Password:</b></td>
+                        <td><input type="password" name="password1" required></td>
+                    </tr>
+                    <tr>
+                        <td><b>User Type:</b></td>
+                        <td>
+                            <select name="usertype" id="usertype" required>
+                                <option value="">-- Select --</option>
+                                <option value="Admin">Admin</option>
+                                <option value="User">User</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" name="submit" value="Login" style="padding: 10px 20px; border-radius: 25px; border: none; background-color: #007BFF; color: yellow; font-weight: bold; cursor: pointer;">
+                        </td>
+                    </tr>
+                </table>
+                <div style="text-align: center; color: red; font-weight: bold; margin-top: 10px;"></div>
+            </form>
         </div>
-
-    </form>
     </div>
-</div>
 
     <footer class="footer">
         <p>&copy; 2025 Sebopi-Unipod. All rights reserved.</p>
