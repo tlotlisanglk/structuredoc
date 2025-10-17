@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fab-Lab-Learning Structure</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+        /* ========== YOUR ORIGINAL STYLES (Unchanged) ========== */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            height: 100%;
+            background: #e9ecef;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 20px;
+            background-color: green;
+            color: #fff;
+            position: relative;
+            min-height: 100px;
+        }
+
+        .header .logo {
+            font-weight: 600;
+            font-size: 22px;
+            color: #1E90FF;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header .logo img {
+            width: 150px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .header .nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .header .nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header .nav li {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1E90FF;
+        }
+
+        .content-area {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px 0;
+            overflow-y: auto;
+        }
+
+        .footer {
+            background-color: green;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* ========== NEW SECTION STYLES (Prefixed with doc-) ========== */
+        .doc-container {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 850px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-top: 30px;
+        }
+
+        .doc-container h2 {
+            background: #5c6bc0;
+            color: #fff;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .doc-viewer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .doc-slide {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            animation: doc-fade 1s ease-in-out;
+        }
+
+        .doc-slide img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .doc-text {
+            text-align: left;
+            background: #f7f9fc;
+            border-radius: 8px;
+            padding: 15px;
+            width: 100%;
+            max-width: 600px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .doc-text h3 {
+            color: #5c6bc0;
+            margin-bottom: 10px;
+        }
+
+        .doc-caption {
+            font-style: italic;
+            color: #555;
+        }
+
+        .doc-btn {
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 12px;
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .doc-btn:hover {
+            background-color: #0d6efd;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .doc-prev {
+            left: -40px;
+        }
+
+        .doc-next {
+            right: -40px;
+        }
+
+        .doc-dots {
+            margin-top: 15px;
+        }
+
+        .doc-dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .doc-dot.active {
+            background-color: #1E90FF;
+        }
+
+        @keyframes doc-fade {
+            from {opacity: 0.4;}
+            to {opacity: 1;}
+        }
+
+        @media (max-width: 700px) {
+            .doc-btn {
+                padding: 10px;
+                font-size: 16px;
+                left: -25px;
+                right: -25px;
+            }
+            .doc-text {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="Fablab.png" alt="FabLab">
+        <span class="logo-text">FabLab Work Progress</span>
+    </div>
+    <nav class="nav">
+        <ul>
+            <li>Portfolio</li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ======== NEW DOCUMENTATION SECTION (REPLACED OLD ONE) ======== -->
+<div class="content-area">
+  <div class="doc-container">
+    <h2><i class="fa-solid fa-book-open"></i> Learning Documentation Record</h2>
+
+    <div class="doc-viewer">
+      <button class="doc-btn doc-prev" onclick="changeDocSlide(-1)">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+
+      <div class="doc-slide">
+        <img src="week1.jpg" alt="Week 1 Learning">
+        <div class="doc-text">
+          <h3>Week 1: Introduction to PCB Design</h3>
+          <p><strong>Learning Objectives:</strong> Understand schematic capture and board layout basics.</p>
+          <p><strong>What I Achieved:</strong> Designed a simple voltage divider PCB.</p>
+          <p><strong>Software Used:</strong> Altium Designer 24.1</p>
+          <p><strong>Time Spent:</strong> 5 hours</p>
+          <p class="doc-caption">This image shows my first PCB layout with routed traces.</p>
+        </div>
+      </div>
+
+      <div class="doc-slide">
+        <img src="week2.jpg" alt="Week 2 Learning">
+        <div class="doc-text">
+          <h3>Week 2: Soldering and Testing</h3>
+          <p><strong>Learning Objectives:</strong> Master through-hole soldering techniques.</p>
+          <p><strong>What I Achieved:</strong> Tested the PCB and verified voltage levels.</p>
+          <p><strong>Software Used:</strong> Multisim 14.3</p>
+          <p><strong>Time Spent:</strong> 4 hours</p>
+          <p class="doc-caption">Testing continuity and voltage using a multimeter.</p>
+        </div>
+      </div>
+
+      <div class="doc-slide">
+        <img src="week3.jpg" alt="Week 3 Learning">
+        <div class="doc-text">
+          <h3>Week 3: 3D Printing Components</h3>
+          <p><strong>Learning Objectives:</strong> Learn to prepare STL models for 3D printing.</p>
+          <p><strong>What I Achieved:</strong> Printed a solid case for the PCB board.</p>
+          <p><strong>Software Used:</strong> Ultimaker Cura 5.8</p>
+          <p><strong>Time Spent:</strong> 3 hours</p>
+          <p class="doc-caption">Final 3D-printed enclosure for my project.</p>
+        </div>
+      </div>
+
+      <button class="doc-btn doc-next" onclick="changeDocSlide(1)">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <div class="doc-dots" id="docDots"></div>
+  </div>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 Sebopi-Unipod. All rights reserved.</p>
+</footer>
+
+<script>
+let docIndex = 0;
+showDocSlide(docIndex);
+
+function changeDocSlide(n) {
+  showDocSlide(docIndex += n);
+}
+
+function showDocSlide(n) {
+  const slides = document.getElementsByClassName("doc-slide");
+  const dotsContainer = document.getElementById("docDots");
+  dotsContainer.innerHTML = "";
+
+  if (n >= slides.length) { docIndex = 0; }
+  if (n < 0) { docIndex = slides.length - 1; }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[docIndex].style.display = "flex";
+
+  // Create navigation dots
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement("span");
+    dot.classList.add("doc-dot");
+    if (i === docIndex) dot.classList.add("active");
+    dot.onclick = () => showDocSlide(docIndex = i);
+    dotsContainer.appendChild(dot);
+  }
+}
+</script>
+
+</body>
+</html>
