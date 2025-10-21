@@ -83,11 +83,11 @@
             background: #fff;
             border-radius: 15px;
             padding: 30px;
-            width: 90%;
-            max-width: 850px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             margin-top: 30px;
+            /* We'll let the container width adapt to the first image */
+            display: inline-block;
         }
 
         .doc-container h2 {
@@ -114,12 +114,19 @@
         }
 
         .doc-slide img {
-            width: 100%;
-            max-width: 600px;
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
             margin-bottom: 15px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Force first image to use original size and control container */
+        .first-image {
+            width: auto !important;
+            height: auto !important;
+            display: block;
+            margin: 0 auto 15px auto;
         }
 
         .doc-text {
@@ -141,6 +148,7 @@
         .doc-caption {
             font-style: italic;
             color: #555;
+            margin-bottom: 15px;
         }
 
         .doc-btn {
@@ -205,6 +213,11 @@
             }
         }
 
+        .home-button a {
+            font-size: 14px;
+            padding: 10px 25px;
+        }
+
         .home-button {
             display: flex;
             justify-content: center;
@@ -228,33 +241,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
-
-        .intro-image {
-            display: flex;
-            justify-content: center;
-            margin: 25px 0;
-        }
-
-        .intro-image img {
-            width: auto;
-            height: auto;
-            max-width: none;
-            max-height: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .doc-slide img[src="week1/1.PNG"] {
-            width: auto !important;
-            height: auto !important;
-            max-width: none !important;
-            max-height: none !important;
-            object-fit: contain;
-        }
-
-        .doc-slide img[src="3.learning_process/1.foundation/1.PNG"] {
-            margin: 10px 0;
-        }
     </style>
 </head>
 
@@ -276,15 +262,12 @@
     <a href="home.html"><i class="fa-solid fa-house"></i> Home</a>
 </div>
 
-
-
 <div class="content-area">
-    <!-- ✅ Added image between Home button and content area -->
-<div class="intro-image">
-    <img src="1.PNG" alt="Intro Image">
-</div>
   <div class="doc-container">
-    <h2><i class="fa-solid fa-book-open"></i> Learning Process</h2>
+    <h2><i class="fa-solid fa-book-open"></i> Learning Process222</h2>
+
+    <!-- First Image sits here before caption -->
+    <img src="1.PNG" alt="Week 1 L" class="first-image">
 
     <div class="doc-viewer">
       <button class="doc-btn doc-prev" onclick="changeDocSlide(-1)">
@@ -292,7 +275,6 @@
       </button>
 
       <div class="doc-slide">
-       
          <p class="doc-caption">This image above shows an introduction to the training program.</p>
         <div class="doc-text">
           <h3>Week 1: Foundation </h3>
@@ -308,11 +290,11 @@
             and from there formulate the specifications based on the requirements from the user.
             There are different methods of designs used and one of them is Agile or Iterative
             design approach. This method allows the requirements to be adjusted during the
-            design and implementation phases until the user requirements are fully met. <br> 
+            design and implementation phases untill the user requirements are fully met. <br> 
             4. The knowledge I already had in my past career about CAD softwares expanded even more 
             when I was introduced to new CAD softwares listed on the Computer-Aided Design page. These
             CAD categories are Vector Graphics, Raster Graphics, 3D Design and Simulation.
-          </p>
+        </p>
           <p><strong>Software Used:</strong> CorelDRAW</p>
           <p><strong>Time Spent:</strong> 4 hours</p>
         </div>
@@ -323,10 +305,11 @@
          <p class="doc-caption">This image above shows CorelDRAW interface and features identified</p>
         <div class="doc-text">
           <h3>Week 1 Continues: Foundation </h3>
-          <p><strong>Learning Objectives:</strong> <br> 1. Learn Features of CorelDRAW</p>
+          <p><strong>Learning Objectives:</strong> <br> 1. Learn Features of CorelDRAW
+          </p>
           <p><strong>What I Achieved:</strong> <br> 
             1. Ability to produce finished CorelDraw Designs<br>
-          </p>
+        </p>
           <p><strong>Software Used:</strong> CorelDRAW</p>
           <p><strong>Time Spent:</strong> 4 hours</p>
         </div>
