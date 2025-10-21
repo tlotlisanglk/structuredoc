@@ -105,11 +105,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
         }
 
         .doc-slide {
-            display: flex;
+            display: none;
             flex-direction: column;
             align-items: center;
             animation: doc-fade 1s ease-in-out;
@@ -145,6 +144,33 @@
             color: #555;
         }
 
+        .doc-btn {
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 12px;
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .doc-btn:hover {
+            background-color: #0d6efd;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .doc-prev {
+            left: -40px;
+        }
+
+        .doc-next {
+            right: -40px;
+        }
+
         .doc-dots {
             margin-top: 15px;
         }
@@ -169,18 +195,32 @@
         }
 
         @media (max-width: 700px) {
+            .doc-btn {
+                padding: 10px;
+                font-size: 16px;
+                left: -25px;
+                right: -25px;
+            }
             .doc-text {
                 font-size: 14px;
             }
-        }
 
+
+    }
+
+           .home-button a {
+                font-size: 14px;
+                padding: 10px 25px;
+            }
+
+              
         .home-button {
             display: flex;
             justify-content: center;
             margin: 20px 0 0 0;
         }
 
-        .home-button a {
+     .home-button a {
             text-decoration: none;
             background-color: #1E90FF;
             color: white;
@@ -198,15 +238,20 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
 
-        /* Preserve full-size image for Week 1 image */
-        .doc-slide img[src="3.learning process/foundation/1.PNG"] {
-            width: auto !important;
-            height: auto !important;
-            max-width: none !important;
-            max-height: none !important;
-            object-fit: contain;
-            margin: 10px 0;
-        }
+.doc-slide img[src="week1/1.PNG"] {
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain;
+}
+
+.doc-slide img[src="3.learning_process/1.foundation/1.PNG"] {
+    margin: 10px 0;
+}
+
+
+
 
     </style>
 </head>
@@ -215,7 +260,7 @@
 
 <header class="header">
     <div class="logo">
-        <img src="1.PNG" alt="FabLab">
+        <img src="Fablab.png" alt="FabLab">
         <span class="logo-text">FabLab Work Progress</span>
     </div>
     <nav class="nav">
@@ -231,38 +276,66 @@
 
 <div class="content-area">
   <div class="doc-container">
-    <h2><i class="fa-solid fa-book-open"></i> Learning Overview</h2>
+    <h2><i class="fa-solid fa-book-open"></i> Learning Process222</h2>
 
     <div class="doc-viewer">
+      <button class="doc-btn doc-prev" onclick="changeDocSlide(-1)">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+
       <div class="doc-slide">
+        <img src="1.PNG" alt="Week 1 L">
+         <p class="doc-caption">This image above shows an introduction to the training program.</p>
         <div class="doc-text">
           <h3>Week 1: Foundation </h3>
-          <p><strong>Learning Objectives:</strong> <br> 
-            1. Introduction to UniPod Digital Fabrication Program<br>
-            2. Version Control<br> 
-            3. Design Thinking <br> 
-            4. Computer-Aided Design
+          <p><strong>Learning Objectives:</strong> <br> 1. Introduction to UniPod Digital Fabrication Program<br>
+            2. Version Control<br> 3. Design Thinking <br> 4. Computer-Aided Design
           </p>
           <p><strong>What I Achieved:</strong> <br> 
-            1. I learned what is FabLab and its importance in promoting innovation not only
-            in Africa but across the globe, and how it offers important training opportunities.<br><br>
-            2. I used GitHub for a long time, and the Version Control page served as a refresher 
-            to the knowledge I gained over the years in my career. <br><br>
-            3. Design thinking is the ability to understand user requirements 
-            and then formulate specifications based on them. 
-            One effective design method is the Agile or Iterative approach, which allows 
-            requirements to be refined throughout the design and implementation stages 
-            until they are fully met. <br><br> 
-            4. My prior CAD knowledge expanded further when I was introduced 
-            to new CAD software categories — Vector Graphics, Raster Graphics, 
-            3D Design, and Simulation.
-          </p>
+            1. I learned what is FabLab and its importance of promoting innovation not only
+            in Africa but across the globe. Also, how it will offer important training to us.<br>
+            2. I used github for a long time and version control page became a refresher to the 
+            already existing knowledge I gained over the past years of my career. <br>
+            3. Design thinking is the ability to carefully understand the user requirements 
+            and from there formulate the specifications based on the requirements from the user.
+            There are different methods of designs used and one of them is Agile or Iterative
+            design approach. This method allows the requirements to be adjusted during the
+            design and implementation phases untill the user requirements are fully met. <br> 
+            4. The knowledge I already had in my past career about CAD softwares expanded even more 
+            when I was introduced to new CAD softwares listed on the Computer-Aided Design page. These
+            CAD categories are Vector Graphics, Raster Graphics, 3D Design and Simulation.
+
+    
+        </p>
           <p><strong>Software Used:</strong> CorelDRAW</p>
           <p><strong>Time Spent:</strong> 4 hours</p>
         </div>
       </div>
+
+    <div class="doc-slide">
+        <img src="week1pics/introduction.PNG" alt="Week 1 Learning">
+         <p class="doc-caption">This image above shows CorelDRAW interface and features identified</p>
+        <div class="doc-text">
+          <h3>Week 1 Continues: Foundation </h3>
+          <p><strong>Learning Objectives:</strong> <br> 1. Learn Features of CorelDRAW
+          </p>
+          <p><strong>What I Achieved:</strong> <br> 
+            1. Ability to produce finished CorelDraw Designs<br>
+        </p>
+          <p><strong>Software Used:</strong> CorelDRAW</p>
+          <p><strong>Time Spent:</strong> 4 hours</p>
+        </div>
+      </div>
+
+
+    
+
+      <button class="doc-btn doc-next" onclick="changeDocSlide(1)">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
     </div>
 
+    <div class="doc-dots" id="docDots"></div>
   </div>
 </div>
 
@@ -271,11 +344,35 @@
 </footer>
 
 <script>
-  // Simplified JS – no forward/back buttons or slide controls needed
-  document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.getElementsByClassName("doc-slide");
-    if (slides.length > 0) slides[0].style.display = "flex";
-  });
+let docIndex = 0;
+showDocSlide(docIndex);
+
+function changeDocSlide(n) {
+  showDocSlide(docIndex += n);
+}
+
+function showDocSlide(n) {
+  const slides = document.getElementsByClassName("doc-slide");
+  const dotsContainer = document.getElementById("docDots");
+  dotsContainer.innerHTML = "";
+
+  if (n >= slides.length) { docIndex = 0; }
+  if (n < 0) { docIndex = slides.length - 1; }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[docIndex].style.display = "flex";
+
+  // Create navigation dots
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement("span");
+    dot.classList.add("doc-dot");
+    if (i === docIndex) dot.classList.add("active");
+    dot.onclick = () => showDocSlide(docIndex = i);
+    dotsContainer.appendChild(dot);
+  }
+}
 </script>
 
 </body>
