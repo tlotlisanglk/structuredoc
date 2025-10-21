@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Fab-Lab-Learning Structure</title>
@@ -86,8 +87,13 @@
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             margin-top: 30px;
-            /* We'll let the container width adapt to the first image */
-            display: inline-block;
+            width: 700px;
+            display: none; /* hide all by default */
+            position: relative;
+        }
+
+        .doc-container.active {
+            display: block; /* show active container */
         }
 
         .doc-container h2 {
@@ -99,34 +105,12 @@
             display: inline-block;
         }
 
-        .doc-viewer {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .doc-slide {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            animation: doc-fade 1s ease-in-out;
-        }
-
-        .doc-slide img {
+        .doc-viewer img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
             margin-bottom: 15px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
-
-        /* Force first image to use original size and control container */
-        .first-image {
-            width: auto !important;
-            height: auto !important;
-            display: block;
-            margin: 0 auto 15px auto;
         }
 
         .doc-text {
@@ -138,11 +122,7 @@
             max-width: 600px;
             line-height: 1.6;
             color: #333;
-        }
-
-        .doc-text h3 {
-            color: #5c6bc0;
-            margin-bottom: 10px;
+            margin: 0 auto;
         }
 
         .doc-caption {
@@ -176,46 +156,6 @@
 
         .doc-next {
             right: -40px;
-        }
-
-        .doc-dots {
-            margin-top: 15px;
-        }
-
-        .doc-dot {
-            height: 12px;
-            width: 12px;
-            margin: 0 5px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .doc-dot.active {
-            background-color: #1E90FF;
-        }
-
-        @keyframes doc-fade {
-            from {opacity: 0.4;}
-            to {opacity: 1;}
-        }
-
-        @media (max-width: 700px) {
-            .doc-btn {
-                padding: 10px;
-                font-size: 16px;
-                left: -25px;
-                right: -25px;
-            }
-            .doc-text {
-                font-size: 14px;
-            }
-        }
-
-        .home-button a {
-            font-size: 14px;
-            padding: 10px 25px;
         }
 
         .home-button {
@@ -259,58 +199,41 @@
 </header>
 
 <div class="home-button">
-    <a href="home.html"><i class="fa-solid fa-house"></i> Home11</a>
+    <a href="home.html"><i class="fa-solid fa-house"></i> Home</a>
 </div>
 
+<!-- Slide Containers -->
 <div class="content-area">
-  <div class="doc-container">
-
-    <!-- First Image sits here before caption -->
-    <img src="1.PNG" alt="Week 1 L" class="first-image">
-
+  <div class="doc-container active">
     <div class="doc-viewer">
-      <button class="doc-btn doc-prev" onclick="changeDocSlide(-1)">
+      <img src="1.PNG" alt="Week 1 L">
+      <p class="doc-caption">This image above shows an introduction to the training program.</p>
+      <div class="doc-text">
+        <h3>Week 1: Foundation </h3>
+      </div>
+      <button class="doc-btn doc-prev" onclick="changeContainer(-1)">
         <i class="fa-solid fa-arrow-left"></i>
       </button>
-
-      <div class="doc-slide">
-         <p class="doc-caption">This image above shows an introduction to the training program.</p>
-        <div class="doc-text">
-          <h3>Week 1: Foundation </h3>
-         
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-      <div class="content-area">
-  <div class="doc-container">
-
-    <!-- First Image sits here before caption -->
-    <img src="1.PNG" alt="Week 1 L" class="first-image">
-
-    <div class="doc-viewer">
-      <button class="doc-btn doc-prev" onclick="changeDocSlide(-1)">
-        <i class="fa-solid fa-arrow-left"></i>
-      </button>
-
-      <div class="doc-slide">
-         <p class="doc-caption">This image above shows an introduction to the training program.</p>
-        <div class="doc-text">
-          <h3>Week 1: Foundation33333 </h3>
-         
-     </div>
-      </div>
-
-     
-      <button class="doc-btn doc-next" onclick="changeDocSlide(1)">
+      <button class="doc-btn doc-next" onclick="changeContainer(1)">
         <i class="fa-solid fa-arrow-right"></i>
       </button>
     </div>
+  </div>
 
-    <div class="doc-dots" id="docDots"></div>
+  <div class="doc-container">
+    <div class="doc-viewer">
+      <img src="1.PNG" alt="Week 1 L">
+      <p class="doc-caption">This is the second content section for week 1.</p>
+      <div class="doc-text">
+        <h3>Week 1: Foundation - Part 2</h3>
+      </div>
+      <button class="doc-btn doc-prev" onclick="changeContainer(-1)">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <button class="doc-btn doc-next" onclick="changeContainer(1)">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
   </div>
 </div>
 
@@ -319,34 +242,22 @@
 </footer>
 
 <script>
-let docIndex = 0;
-showDocSlide(docIndex);
+let containerIndex = 0;
 
-function changeDocSlide(n) {
-  showDocSlide(docIndex += n);
+function showContainer(index) {
+    const containers = document.getElementsByClassName("doc-container");
+    if (index >= containers.length) containerIndex = 0;
+    if (index < 0) containerIndex = containers.length - 1;
+
+    for (let i = 0; i < containers.length; i++) {
+        containers[i].classList.remove("active");
+    }
+    containers[containerIndex].classList.add("active");
 }
 
-function showDocSlide(n) {
-  const slides = document.getElementsByClassName("doc-slide");
-  const dotsContainer = document.getElementById("docDots");
-  dotsContainer.innerHTML = "";
-
-  if (n >= slides.length) { docIndex = 0; }
-  if (n < 0) { docIndex = slides.length - 1; }
-
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[docIndex].style.display = "flex";
-
-  // Create navigation dots
-  for (let i = 0; i < slides.length; i++) {
-    const dot = document.createElement("span");
-    dot.classList.add("doc-dot");
-    if (i === docIndex) dot.classList.add("active");
-    dot.onclick = () => showDocSlide(docIndex = i);
-    dotsContainer.appendChild(dot);
-  }
+function changeContainer(n) {
+    containerIndex += n;
+    showContainer(containerIndex);
 }
 </script>
 
